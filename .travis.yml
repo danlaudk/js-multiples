@@ -1,0 +1,9 @@
+language: scala
+scala:
+  - 2.12.1
+jdk:
+  - openjdk8
+branches:
+  only:
+  - gh-pages
+  - master

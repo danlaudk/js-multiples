@@ -1,7 +1,8 @@
-target/
+target/*
 .cache
 .classpath
 .project
 .settings/
-!target/scala*/
-!target/*/*.js
+!target/scala-2.12
+target/scala-2.12/*
+!target/scala-2.12/*.js
