@@ -1,4 +1,4 @@
-package example
+package sumOfMultiples
 
 import scala.scalajs.js
 import js.annotation.JSExport
@@ -22,17 +22,13 @@ trait ElementExt extends js.Object {
       f: js.Function1[name.EventType, _]): Unit
 }
 
-object ScalaJSExample extends js.JSApp {
+object JsSumOfMultiples extends js.JSApp {
   def main(): Unit = {
     val paragraph = dom.document.createElement("p")
-    paragraph.innerHTML = "<strong>It works!</strong>"
+    paragraph.innerHTML = "<strong> sumOfMUltiples of Set(7, 13, 17), 20  is ...  </strong> " + sumOfMultiples(Set(7, 13, 17), 20)
     dom.document.getElementById("playground").appendChild(paragraph)
 
     val p = paragraph.asInstanceOf[ElementExt]
   }
-
-  /** Computes the square of an integer.
-   *  This demonstrates unit testing.
-   */
-  def square(x: Int): Int = x*x
+  def sumOfMultiples(s:Set[Int], i:Int):Int = 0
 }
