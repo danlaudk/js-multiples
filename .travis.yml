@@ -1,8 +1,18 @@
 language: scala
-script:
-  - sbt ++$TRAVIS_SCALA_VERSION test 'set scalaJSStage in Global := FullOptStage' test
 scala:
-  - 2.10.6
-  - 2.11.8
+  - 2.12.1
 jdk:
-  - oraclejdk8
+  - openjdk8
+branches:
+  only:
+  - gh-pages
+  - master
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION test test:fullOptJS
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: gh-pages
