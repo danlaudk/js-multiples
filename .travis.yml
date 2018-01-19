@@ -1,0 +1,18 @@
+language: scala
+scala:
+  - 2.12.1
+jdk:
+  - openjdk8
+branches:
+  only:
+  - gh-pages
+  - master
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION test test:fullOptJS
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: gh-pages
