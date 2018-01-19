@@ -16,18 +16,16 @@ class sumOfMultiplesTest extends FlatSpec with PropertyChecks {
     assert(
       sumOfMultiples(Set(7, 13, 17), 20) == 51 )
   }
+  it should "sum multiples of 3 5 up to 20, where 15 summed once" in {
+    assert(
+      sumOfMultiples(Set(3,5), 20) == 78 )
+  }
   // property tests
   "limit is 0" should "sum to 0" in {
     val i = 0
     forAll { (set: Set[Int]) =>
       assert(
         sumOfMultiples(set, i) == 0 )
-    }
-  }
-  "sum of multiples" should "be less than the limit raised to the limit" in {
-    forAll { (set: Set[Int], i:Int) =>
-      assert(
-        sumOfMultiples(set, i) < scala.math.pow(i,i) )
     }
   }
   "set of one number" should "sum up to a multiple of the number " in {
